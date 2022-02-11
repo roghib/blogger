@@ -1,0 +1,18 @@
+<style>
+  /* <![CDATA[ */
+    
+    ...
+
+  /* ]]> */
+</style>
+
+
+
+
+<script>
+// <![CDATA[
+
+    ...
+
+// ]]>
+</script>

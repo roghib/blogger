@@ -1,2 +1,2 @@
-# blogger
-Simple Blogger v3 Templates
+# Blogger
+Simple Blogger Templates

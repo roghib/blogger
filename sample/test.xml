@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale'>
+<head>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<title><data:view.title.escaped/></title>
+<b:include data='blog' name='all-head-content'/>
+<b:skin><![CDATA[
+/*
+* User: Roghib
+* Date: 1/1/2022
+* Time: 2:51 AM
+*/
+html{
+    font-family: sans-serif;
+}
+img{
+    display: block;
+    max-inline-size:100%;
+    block-size: auto;
+}
+.logo{
+    width:100px;
+}
+]]></b:skin>
+</head>
+<body>
+
+<header>
+    <b:section id='hydra' showaddelement='false'>
+        <b:widget id='Header1' locked='true' title='' type='Header' version='2' visible='true'>
+            <b:widget-settings>
+                <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEgy4vu2Vcvs1T7BLDp_A7Jpgf3rS5Nvf4Oirwo7QqKGY1dry4u0Jiz-2QDC7ZSFmAfdn5zmBsOlHhvJgLL-KXG__hunDZ6ay5h0H5pP0uRYohoVWWqITKyb2Vg9rf59XzQ3twyMEBL2Al5UuzjktucqbVMpklAXMGHR7NWmUJ6qdi6WPyZ6toLs4J7c_A</b:widget-setting>
+                <b:widget-setting name='useImage'>true</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main' var='this'>
+                <a expr:href='data:blog.homepageUrl'>
+                    <b:include data='{ image: data:image, imageClass: &quot;logo&quot;, altText: data:blog.title.escaped, originalWidth: data:width, originalHeight: data:height }' name='responsiveImage'/>
+                </a>
+                <h1><data:title/></h1>
+                <p><data:this.description/></p>
+            </b:includable>
+        </b:widget>
+        <b:widget id='PageList1' locked='true' title='' type='PageList1' visible='true'>
+            <b:includable id='main'>
+                <nav>
+                <b:with value='true' var='overflow'>
+                <b:with value='&quot;tabs&quot;' var='pageListClass'>
+                    <ul>
+                    <b:class cond='data:pageListClass' expr:name='data:pageListClass'/>
+                    <b:loop values='data:links' var='link'>
+                        <li>
+                            <b:class cond='data:overflow' name='overflowable-item'/>
+                            <b:class cond='data:link.isCurrentPage' name='selected'/>
+
+                            <a expr:href='data:link.href'><data:link.title/></a>
+                        </li>
+                    </b:loop>
+                    </ul>
+                </b:with>
+                </b:with>
+                </nav>
+            </b:includable>
+        </b:widget>
+    </b:section>
+</header>
+<main>
+<b:section id='roghib' showaddelement='true'>
+    <b:widget id='FeaturedPost1' locked='true' title='' type='FeaturedPost' version='2' visible='true'>
+        <b:widget-settings>
+            <b:widget-setting name='showSnippet'>true</b:widget-setting>
+            <b:widget-setting name='showPostTitle'>true</b:widget-setting>
+            <b:widget-setting name='postId'>0</b:widget-setting>
+            <b:widget-setting name='showFirstImage'>true</b:widget-setting>
+            <b:widget-setting name='useMostRecentPost'>true</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main' var='this'>
+
+            <h3>/// FEATURED POST ///</h3>
+            <b:loop values='data:posts filter (p =&gt; p.id != data:view.postId)' var='post'>
+                <span><data:post.author.name/></span>
+                <h3><data:post.title/></h3>
+            </b:loop>
+            
+        </b:includable>
+    </b:widget>
+    <b:widget id='PopularPosts1' locked='true' title='' type='PopularPosts' version='2' visible='true'>
+        <b:widget-settings>
+            <b:widget-setting name='numItemsToShow'>3</b:widget-setting>
+            <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+            <b:widget-setting name='showSnippets'>true</b:widget-setting>
+            <b:widget-setting name='timeRange'>LAST_WEEK</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main' var='this'>
+
+            <h3>/// POPULAR POST ///</h3>
+            <b:loop values='data:posts filter (p =&gt; p.id != data:view.postId)' var='post'>
+                <h3><data:post.title/></h3>
+                <span>
+                    <time expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
+                        <data:post.date/>
+                    </time>
+                </span>
+            </b:loop>
+
+        </b:includable>
+    </b:widget>
+    <b:widget id='Blog1' locked='true' title='' type='Blog' version='2' visible='true'>
+        <b:widget-settings>
+            <b:widget-setting name='showDateHeader'>false</b:widget-setting>
+            <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
+            <b:widget-setting name='showShareButtons'>false</b:widget-setting>
+            <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+            <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
+            <b:widget-setting name='showAuthor'>true</b:widget-setting>
+            <b:widget-setting name='disableGooglePlusShare'>true</b:widget-setting>
+            <b:widget-setting name='style.linkcolor'>#0000ff</b:widget-setting>
+            <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+            <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='reactionsLabel'/>
+            <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+            <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+            <b:widget-setting name='showLabels'>true</b:widget-setting>
+            <b:widget-setting name='showLocation'>true</b:widget-setting>
+            <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+            <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+            <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+            <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+            <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+            <b:widget-setting name='showReactions'>false</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main' var='this'>
+            <h3>/// HELLO WORLD! ///</h3>
+            <b:with value='data:widgets.FeaturedPost filter (w =&gt; w.sectionId == &quot;roghib&quot;) map (w =&gt; w.postId)' var='featuredPostIds'>
+            <b:with value='data:view.isHomepage ? data:posts filter (post =&gt; post.id not in data:featuredPostIds) : data:posts' var='posts'>
+
+            <b:loop index='i' values='data:posts' var='post'>
+                <!-- OUTPUT -->
+                <!-- 
+                    >>> posts = ['Dragon', 'Dragon','Dragon', 'Dragon','Dragon', 'Dragon']
+                    >>> for i in range(len(posts)):
+                    ...     print(i)
+                    ...
+                 -->
+                <h3>
+                    <span><data:i/></span>
+                    <data:post.title/>
+                </h3>
+
+            </b:loop>
+            </b:with>
+            </b:with>
+
+        </b:includable>
+    </b:widget>
+</b:section>
+<aside>
+    <b:section id='dragon' showaddelement='false'>
+        <b:widget id='Label1' locked='true' title='' type='Label' visible='true'>
+            <b:widget-settings>
+                <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+                <b:widget-setting name='display'>LIST</b:widget-setting>
+                <b:widget-setting name='selectedLabelsList'/>
+                <b:widget-setting name='showType'>ALL</b:widget-setting>
+                <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main' var='this'>
+
+                <h3>LABEL</h3>
+                <ul>
+                    <b:loop values='data:labels' var='label'>
+                        <li>
+                            <span><data:label.name/></span>
+                            <b:if cond='data:this.showFreqNumbers'>
+                                <span><data:label.count/></span>
+                            </b:if>
+                        </li>
+                    </b:loop>
+                </ul>
+
+            </b:includable>
+        </b:widget>
+        <b:widget id='BlogArchive1' locked='true' title='' type='BlogArchive' visible='true'>
+        <b:widget-settings>
+            <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
+            <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
+            <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
+            <b:widget-setting name='monthPattern'>MMMM</b:widget-setting>
+            <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
+            <b:widget-setting name='weekPattern'>MM/dd</b:widget-setting>
+            <b:widget-setting name='chronological'>false</b:widget-setting>
+            <b:widget-setting name='showPosts'>true</b:widget-setting>
+            <b:widget-setting name='frequency'>MONTHLY</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main' var='this'>
+
+            <h3>ARCHIEVE</h3>
+                <ul>
+                <li><h4>FLAT</h4></li>
+                <b:loop values='data:data' var='i'>
+                    <li>
+                        <a expr:href='data:i.url'>
+                            <span><data:i.name/></span>
+                            <span><data:i.post-count/></span>
+                        </a>
+                    </li>
+                </b:loop>
+                </ul>
+
+            </b:includable>
+        </b:widget>
+    </b:section>
+</aside>
+</main>
+<footer>
+    <span>Roghib 2022</span>
+</footer>
+
+</body>
+</html>

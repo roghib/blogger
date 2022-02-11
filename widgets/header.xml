@@ -1,0 +1,46 @@
+<b:widget id='Header1' locked='true' title='Blogger ☠ Test (Header)' type='Header' visible='true'>
+    <b:widget-settings>
+        <b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEgy4vu2Vcvs1T7BLDp_A7Jpgf3rS5Nvf4Oirwo7QqKGY1dry4u0Jiz-2QDC7ZSFmAfdn5zmBsOlHhvJgLL-KXG__hunDZ6ay5h0H5pP0uRYohoVWWqITKyb2Vg9rf59XzQ3twyMEBL2Al5UuzjktucqbVMpklAXMGHR7NWmUJ6qdi6WPyZ6toLs4J7c_A=s500</b:widget-setting>
+        <b:widget-setting name='displayHeight'>500</b:widget-setting>
+        <b:widget-setting name='sectionWidth'>1615</b:widget-setting>
+        <b:widget-setting name='useImage'>true</b:widget-setting>
+        <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+        <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+        <b:widget-setting name='displayWidth'>500</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main' var='this'>
+        <div class='header-widget'>
+        <b:include cond='data:imagePlacement in {&quot;REPLACE&quot;, &quot;BEFORE_DESCRIPTION&quot;}' name='image'/>
+        <b:include cond='data:imagePlacement not in {&quot;REPLACE&quot;, &quot;BEFORE_DESCRIPTION&quot;}' name='title'/>
+        <b:include cond='data:imagePlacement != &quot;REPLACE&quot;' name='description'/>
+        </div>
+        <b:include cond='data:imagePlacement == &quot;BEHIND&quot;' name='behindImageStyle'/>
+    </b:includable>
+    <b:includable id='behindImageStyle'>
+        <b:if cond='data:sourceUrl'>
+        <b:include cond='data:this.image' data='{ image: data:this.image, selector: &quot;.header-widget&quot; }' name='responsiveImageStyle'/>
+        <style type='text/css'>
+        .header-widget {
+        background-position: <data:blog.locale.languageAlignment/>;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        </style>
+        </b:if>
+    </b:includable>
+    <b:includable id='description'>
+        <p><data:this.description/></p>
+    </b:includable>
+    <b:includable id='image'>
+        <a class='header-image-wrapper' expr:href='data:blog.homepageUrl'>
+        <b:include data='{ image: data:image, altText: data:blog.title.escaped, originalWidth: data:width, originalHeight: data:height }' name='responsiveImage'/>
+        </a>
+    </b:includable>
+    <b:includable id='title'>
+        <h1>
+        <b:tag cond='data:view.url != data:blog.homepageUrl' expr:href='data:blog.homepageUrl' name='a'>
+            <data:title/>
+        </b:tag>
+        </h1>
+    </b:includable>
+</b:widget>

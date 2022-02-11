@@ -1,0 +1,11 @@
+<b:widget id='PopularPosts1' locked='true' title='' type='PopularPosts' visible='true'>
+    <b:widget-settings>
+      <b:widget-setting name='numItemsToShow'>3</b:widget-setting>
+      <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+      <b:widget-setting name='showSnippets'>true</b:widget-setting>
+      <b:widget-setting name='timeRange'>LAST_WEEK</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main' var='this'>
+        DATA
+    </b:includable>
+  </b:widget>

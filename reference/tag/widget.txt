@@ -1,0 +1,49 @@
+/// Widget Part
+    <b:includable> 
+    <b:include>
+
+/// Widget Setting
+    <b:widget-settings> 
+    <b:widget-setting>
+
+/// Conditional tags
+    <b:if> 
+    <b:elseif> 
+    <b:else>
+/// Switch
+    <b:switch>
+    <b:case>
+    <b:default>
+
+/// Variable Aliases
+    <b:with>
+
+/// Loop
+    <b:loop>
+    <b:loop index='INDEX_NAME'
+        reverse='BOOLEAN'
+        values='ARRAY'
+        var='VARIABLE_NAME'>
+
+    </b:loop>
+
+/// HTML Comment
+    <b:comment>
+
+/// Attribute
+    <b:attr>
+
+/// Class
+    <b:class>
+
+/// Post
+    <b:message>
+    <b:param>
+
+/// Evaluation
+    <b:eval>
+
+/// Output
+    <data:foo/>
+
+<b:template-script>

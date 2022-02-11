@@ -1,0 +1,8 @@
+data:template
+data:template.isAlternateRendering
+data:template.isCustom
+data:template.isResponsive
+data:template.localizedName
+data:template.name
+data:template.variant
+data:template.variantId

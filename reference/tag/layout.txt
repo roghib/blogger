@@ -1,0 +1,25 @@
+/// <b:section>
+
+    <b:section ads='TRUE|FALSE'
+            class='CLASS_NAME'
+            cond='TRUE|FALSE'
+            id='SECTION_ID'
+            maxwidgets='NUMBER'
+            name='SECTION_NAME'
+            preferred='YES|NO|TRUE|FALSE'
+            showaddelement='YES|NO|TRUE|FALSE'>
+
+    </b:section>
+
+
+
+/// <b:widget>
+
+    <b:widget id='WIDGET_ID'
+            cond='TRUE|FALSE'
+            locked='TRUE|FALSE'
+            version='1|2'
+            title='WIDGET_TITLE'
+            type='WIDGET_TYPE'>
+
+    </b:widget>

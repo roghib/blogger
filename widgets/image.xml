@@ -1,0 +1,28 @@
+<b:widget id='Image1' locked='false' title='' type='Image' visible='true'>
+<b:widget-settings>
+<b:widget-setting name='displayUrl'>https://blogger.googleusercontent.com/img/a/AVvXsEgy4vu2Vcvs1T7BLDp_A7Jpgf3rS5Nvf4Oirwo7QqKGY1dry4u0Jiz-2QDC7ZSFmAfdn5zmBsOlHhvJgLL-KXG__hunDZ6ay5h0H5pP0uRYohoVWWqITKyb2Vg9rf59XzQ3twyMEBL2Al5UuzjktucqbVMpklAXMGHR7NWmUJ6qdi6WPyZ6toLs4J7c_A=s500</b:widget-setting>
+<b:widget-setting name='displayHeight'>500</b:widget-setting>
+<b:widget-setting name='sectionWidth'>1615</b:widget-setting>
+<b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+<b:widget-setting name='displayWidth'>500</b:widget-setting>
+<b:widget-setting name='link'/>
+<b:widget-setting name='caption'/>
+</b:widget-settings>
+<b:includable id='main'>
+<b:include name='widget-title'/>
+<b:include name='content'/>
+</b:includable>
+<b:includable id='content'>
+<div class='widget-content'>
+<b:tag cond='data:link' expr:href='data:link' name='a'>
+<img expr:alt='data:title' expr:height='data:height' expr:id='data:widget.instanceId + &quot;_img&quot;' expr:src='data:sourceUrl' expr:width='data:width'>
+<b:attr cond='data:sourceSet' expr:value='data:sourceSet' name='srcset'/>
+</img>
+</b:tag>
+<br/>
+<b:if cond='data:caption'>
+<span class='caption'><data:caption/></span>
+</b:if>
+</div>
+</b:includable>
+</b:widget>
